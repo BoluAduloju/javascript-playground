@@ -1,22 +1,37 @@
-const myButton = document.getElementById("myButton");
-const label1 = document.getElementById("label1");
-const label2 = document.getElementById("label2");
-const label3 = document.getElementById("label3");
-const min = 1;
-const max = 6;
-let randomNum1;
-let randomNum2;
-let randomNum3;
 
-myButton.onclick = function(){
-    randomNum1 = Math.floor(Math.random() * max) + min;
-    randomNum2 = Math.floor(Math.random() * max) + min;
-    randomNum3 = Math.floor(Math.random() * max) + min;
-    label1.textContent = randomNum1;
-    label2.textContent = randomNum2;
-    label3.textContent = randomNum3;
+const minNum = 1;
+const maxNum = 100;
+const answer = Math.random() = (maxNum - minNum + 1);
+
+
+let attempts = 0;
+let guess;
+let running = true;
+
+
+while(running){
+     guess = window.propmpt(`Guess a number between ${minNum} - ${maxNum}`)
+     guess = Number(guess);
+
+
+     if(isNaN(guess)){
+        window.alert("Please enter a valid number");
+     }
+     else if(guess < minNum || guess > maxNum){
+        window.alert("Please enter a valid number");
+     }
+     else{
+        attempts++;
+        if(guess < answer){
+            window.alert("TOO LOW! TRY AGAIN!")
+        }
+        else if(guess > answer){
+           window.alert(`CORRECT! The answer was ${answer}. it you ${attempts} attempts.`)
+           running = false;
+        }
+     }
+ 
 }
-
 
 
 
