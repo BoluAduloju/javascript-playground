@@ -1,53 +1,19 @@
-function generatePassword(length,includeLowercaese, includeUppercase, includeNumbers, includeSymbols){
-
-   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-   const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-   const numberChars = "0123456789";
-   const symbolChars = "!@#$%^&*()_+-";
-
-   let allowedChars = "";
-   let password = "";
-
-   allowedChars += includeLowercase ? lowercaseChars : "";
-   allowedChars += includeUppercase ? uppercaseChars : "";
-   allowedChars += includeNumbers ? numberChars : "";
-   allowedChars += includeSymbols ? symbolChars : "";
-
-   if(length <= 0){
-      return "(password lenght must be at least 1)";
-   }
-   if(allowedChars.length === 0){
-      return "(At least 1 set of character needs to be selected)";
-   }
-
-   for( let i = 0; i < length; i++){
-      const randomIndex = math.floor(Math.random() * allowedChars.length);
-      password += allowedChars[randomIndex];
-   }
-   return password;
-
+function Car(make, model, year, color){
+   this.make = make;
+   this.model = model,
+   this.year = year,
+   this.color = color
+   this.drive = function(){`You Drive a ${this.make} ${this.model}`}
 }
 
-const passwordLength = 10;
-const includeLowercase = true;
-const includeUppercase = true;
-const includeNumbers = true;
-const includeSymbols = true;
+const car1 = new Car("Ford", "Mustang", 2024, "red");
+const car2 = new Car("Chevrolet", "Camaro", 2025, "blue");
+const car3 = new Car("Dodge", "Charger", 2026, "silver");
 
 
-const password = generatePassword(passwordLength,
-                                 includeLowercase,
-                                 includeUppercase, 
-                                 includeNumbers,
-                                 includeSymbols);
-
-console.log(`Generated password ${password}`);
-
-
- 
-
-
-
+car1.drive();
+car2.drive();
+car3.drive();
 
 
 
