@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Calculator</title>
+    <title>Image Search App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Age Calculator</h1>
-        <div class="form">
-            <label for="birthday">Enter your date of birth</label>
-            <input type="date" id="birthday" name="birthday">
-            <button id="btnEl">Calculate Age</button>
-            <p id="result">Your age is 21 years old</p>
-        </div>
+
+    <h1>Image Search App</h1>
+    <form>
+        <input type="text" id="search-input" placeholder="search for images..">
+        <button id="search-button">Search</button>
+    </form>
+
+    <div class="search-results">
+      <div class="search-result">
+        <img src="https://images.unsplash.com/photo-1500259571355-332da5cb07aa?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dgit" alt="cat image">
+      </div>
     </div>
-   <script src="main.js"></script> 
+    
+
+
+    <script src="main.js"></script>
 </body>
 </html>
