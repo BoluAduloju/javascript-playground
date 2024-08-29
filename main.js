@@ -1,27 +1,27 @@
-const apikey = "46f80a02ecae410460d59960ded6e1c6";
-const weatherDataEl = documnet.getElementById("weather-data");
-const cityInputEl = documnet.getElemntById("city-input");
-const formEl = document.querySelector("form");
+const btnEl = document.getElementById("btnEl");
+const birthdayEl = document.getElementById("birthday");
+const resultEl = document.getElementById("result");
 
-formEl.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const cityValue = cityInputEl.value;
-    console.log(city.Value);
-    getWeatherData(cityValue);
-});
-
-async function getWeatherData(cityValue){
-    try{
-       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${apikey}&units=metric`)
-       if(!response.ok){
-        throw new Error("Network response was not ok")
-       }
-
-       const data = await response.json()
-
-       console.log(data);
-    } catch(error){
-
+function calculateAge(){
+    const birthdayValue = birthdayEl.value;
+    if(birthdayValue === ""){
+        alert("Please enter your birthday")
+    }else{
+        const age = getAge(birthdayValue)
+        resultEl.innerText = `Your age is ${age} ${age > 1 ? "years" : "year"} old`;
     }
+   
 }
+function getAge(birthdayValue){
+    const currentDate = new Date();
+    const birthdayDate = new Date(birthdayValue);
+    let age = currentDate.getFullYear() - birthdayDate.getFullYear();
+    const month = currentDate.getMonth() - birthdayDate.getMonth();
+     
+    if(month < 0 || (month === 0 && currentDate.getDate() < birthdayDate.getMonth())){
+        age--
+    }
 
+    return age;
+}
+btnEl.addEventListener("click", calculateAge);
