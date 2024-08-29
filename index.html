@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Weather App</h1>
-        <form>
-            <input type="text" id="city-input" placeholder="Enter City">
-            <input type="submit" value="Get Weather">
-        </form>
-        <div id="weather-data">
-            <div class="icon">
-                <img src="http://openweathermap.org/img/wn/0ld.png" alt="weather icon">
-            </div>
-            <div class="temperature">22°C</div>
-            <div class="description">Sunny
-            <div class="details">
-                <div>Feels like: 23°C</div>
-                <div>Humidity: 40%</div>
-                <div>Wind Speed: 5m/s</div>
-            </div>
-            </div>
+           <form>
+                <input type="text" id="city-input" placeholder="Enter City">
+                <input type="submit" value="Get Weather" id="weather-data">
+            </form>
+        <div class="icon">
+            <img src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" alt="weather icon">
         </div>
+        <div class="temperature">22°C</div>
+            <div class="description">Sunny
+                <div class="details">
+                    <div>Feels like: 23°C</div>
+                    <div>Humidity: 40%</div>
+                    <div>Wind Speed: 5m/s</div>
+                </div>
+            </div>
+       </div>   
     </div>
-    
+   <script src="main.js"></script>   
 </body>
 </html>
